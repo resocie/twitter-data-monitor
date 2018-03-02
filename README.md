@@ -17,7 +17,7 @@ Um bom processo de trabalho em desenvolvimento de software começa com a prepara
 * [virtualenv](https://virtualenv.pypa.io/en/stable/userguide/)
 * [virtualenvwrapper](https://virtualenvwrapper.readthedocs.io/en/latest/)
 
-O [Henrique Bastos](https://github.com/henriquebastos) fez (uma postagem super relevante sobre organização de ambientes python)[https://medium.com/welcome-to-the-django/guia-definitivo-para-organizar-meu-ambiente-python-a16e2479b753]. Vale a leitura.
+O [Henrique Bastos](https://github.com/henriquebastos) fez [uma postagem super relevante sobre organização de ambientes python](https://medium.com/welcome-to-the-django/guia-definitivo-para-organizar-meu-ambiente-python-a16e2479b753). Vale a leitura.
 
 ### Clonar repositório
 
@@ -42,7 +42,7 @@ $ pip install -r requirements.txt
 
 ## Chaves de acesso
 
-Acesse o [gerenciador de aplicações do Twitter](https://apps.twitter.com/) para gerar as chaves necessárias para acesso à API da plataforma. Essas chaves deverão ser inseridas no arquivo ```keys.json```
+Acesse o [gerenciador de aplicações do Twitter](https://apps.twitter.com/) para gerar as chaves necessárias para acesso à API da plataforma. Essas chaves deverão ser inseridas no arquivo [keys.json](keys.json)
 
 ## Executar os testes
 
@@ -53,6 +53,21 @@ $ python tests/test_twitter.py
 ```
 
 Sugiro darem uma olhada [nesta ótima introdução ao unittest](http://pythontesting.net/framework/unittest/unittest-introduction/)
+
+## ToDo
+
+Este é apenas um esqueleto de projeto para que o grupo comece a trabalhar. Resta ainda muito trabalho a ser feito. Algumas ideias: 
+
+* Corrigir testes quebrados
+* Complementar testes
+* Remover código hard-coded
+* Corrigir código replicado
+* Incluir mecanismo de logging
+* Expandir quantidade dos dados buscados
+* Criar interface CLI para execução do programa
+* Implementar mecanismo para automatização da coleta recorrente dos dados
+* Persistir dados coletados em base estruturada
+* Viabilizar interface de integração da base de dados criada com canal para geração de informações visuais
 
 ## Licença
 
