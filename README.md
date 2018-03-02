@@ -47,3 +47,7 @@ Todos os testes foram desenvolvidos utilizando a biblioteca [unittest](https://d
 ```
 $ python tests/test_twitter.py
 ```
+
+## Licença
+
+Código licenciado sob a [Licença MIT](../blob/master/LICENSE)
