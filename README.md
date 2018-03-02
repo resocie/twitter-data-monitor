@@ -14,18 +14,24 @@ https://medium.com/welcome-to-the-django/guia-definitivo-para-organizar-meu-ambi
 
 ## Clonar repositório
 
-git clone
+```
+$ git clone
+```
 
 ## Criar virtual env
 
+```
 $ mkvirtualenv twitter-data-monitor
+```
 
 ## Instalar dependências
 
+```
 $ cd twitter-data-monitor
 $ pip install ...
+```
 
 # Executar os testes 
-
+```
 $ python tests/test_twitter.py
-
+```
