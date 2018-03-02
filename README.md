@@ -40,6 +40,10 @@ $ cd twitter-data-monitor
 $ pip install -r requirements.txt
 ```
 
+## Chaves de acesso
+
+Acesse o [gerenciador de aplicações do Twitter](https://apps.twitter.com/) para gerar as chaves necessárias para acesso à API da plataforma. Essas chaves deverão ser inseridas no arquivo ```keys.json```
+
 ## Executar os testes
 
 Todos os testes foram desenvolvidos utilizando a biblioteca [unittest](https://docs.python.org/3/library/unittest.html) nativa do Python. Para executá-los, a partir da pasta raiz do projeto, execute:
@@ -47,6 +51,8 @@ Todos os testes foram desenvolvidos utilizando a biblioteca [unittest](https://d
 ```
 $ python tests/test_twitter.py
 ```
+
+Sugiro darem uma olhada [nesta ótima introdução ao unittest](http://pythontesting.net/framework/unittest/unittest-introduction/)
 
 ## Licença
 
