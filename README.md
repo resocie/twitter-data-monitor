@@ -50,4 +50,4 @@ $ python tests/test_twitter.py
 
 ## Licença
 
-Código licenciado sob a [Licença MIT](../blob/master/LICENSE)
+Código licenciado sob a [Licença MIT](/blob/master/LICENSE)
