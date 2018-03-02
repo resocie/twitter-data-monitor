@@ -33,12 +33,17 @@ $ mkvirtualenv twitter-data-monitor
 
 ## Instalar dependências
 
+Todas as bibliotecas de que o projeto depende estão listadas no arquivo 'requirements.txt'. Para instalá-las, execute:
+
 ```
 $ cd twitter-data-monitor
-$ pip install ...
+$ pip install -r requirements.txt
 ```
 
-# Executar os testes 
+# Executar os testes
+
+	Todos os testes foram desenvolvidos utilizando a biblioteca [unittest](https://docs.python.org/3/library/unittest.html) nativa do Python. Para executá-los, a partir da pasta raiz do projeto, execute:
+
 ```
 $ python tests/test_twitter.py
 ```
