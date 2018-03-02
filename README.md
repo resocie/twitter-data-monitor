@@ -33,7 +33,7 @@ $ mkvirtualenv twitter-data-monitor
 
 ### Instalar dependências
 
-Todas as bibliotecas de que o projeto depende estão listadas no arquivo 'requirements.txt'. Para instalá-las, execute:
+Todas as bibliotecas de que o projeto depende estão listadas no arquivo [requirements.txt](requirements.txt). Para instalá-las, execute:
 
 ```
 $ cd twitter-data-monitor
@@ -71,4 +71,4 @@ Este é apenas um esqueleto de projeto para que o grupo comece a trabalhar. Rest
 
 ## Licença
 
-Código licenciado sob a [Licença MIT](LICENSE)
+Código disponível sob [Licença MIT](LICENSE)
