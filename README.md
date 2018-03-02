@@ -49,7 +49,7 @@ Acesse o [gerenciador de aplicações do Twitter](https://apps.twitter.com/) par
 Todos os testes foram desenvolvidos utilizando a biblioteca [unittest](https://docs.python.org/3/library/unittest.html) nativa do Python. Para executá-los, a partir da pasta raiz do projeto, execute:
 
 ```
-$ python tests/test_twitter.py
+$ python -m unittest discover tests
 ```
 
 Sugiro darem uma olhada [nesta ótima introdução ao unittest](http://pythontesting.net/framework/unittest/unittest-introduction/)
