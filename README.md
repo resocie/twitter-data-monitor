@@ -29,6 +29,7 @@ $ git clone git@github.com:code4pol/twitter-data-monitor.git
 
 ```
 $ mkvirtualenv twitter-data-monitor
+$ workon instagram-data-monitor
 ```
 
 ### Instalar dependências
