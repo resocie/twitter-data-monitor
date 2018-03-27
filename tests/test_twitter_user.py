@@ -11,7 +11,7 @@ class TestTwitterUser(unittest.TestCase):
 
 	def test_id_retrieval(self):
 		user = TwitterUser('alegomes')
-		self.assertEqual(14147108, user.id)
+		self.assertEqual(14147108 , user.id)
 
 
 if __name__ == '__main__':
