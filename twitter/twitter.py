@@ -22,4 +22,7 @@ class TwitterUser:
 
 		self.id = user.id
 		self.username = user.screen_name
-		self.name = 'Alexandre Gomes'
+		self.name = user.name
+		self.followers_count = user.followers_count
+		self.tweets_count = user.statuses_count
+		self.following_count = user.friends_count
