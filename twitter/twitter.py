@@ -26,4 +26,5 @@ class TwitterUser:
 		self.followers_count = user.followers_count
 		self.tweets_count = user.statuses_count
 		self.following_count = user.friends_count
+		self.likes_count = user.favourites_count
 		file.close()
