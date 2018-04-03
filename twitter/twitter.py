@@ -17,9 +17,13 @@ class TwitterUser:
 		auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
 		auth.set_access_token(access_token, access_token_secret)
 		api = tweepy.API(auth)
-		
+
 		user = api.get_user(username)
 
 		self.id = user.id
 		self.username = user.screen_name
-		self.name = 'Alexandre Gomes'
+		self.name = user.name
+		self.followers_count = user.followers_count
+		self.tweets_count = user.statuses_count
+		self.following_count = user.friends_count
+		file.close()
