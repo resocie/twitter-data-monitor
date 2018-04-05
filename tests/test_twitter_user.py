@@ -13,6 +13,16 @@ class TestTwitterUser(unittest.TestCase):
 		user = TwitterUser('alegomes')
 		self.assertEqual(14147108, user.id)
 
+class TestArquivoCSV(unittest.TestCase):
+	def test_arquivo_existe(self):
+		try:
+			file = open('twitter/autores.csv',newline='')
+			file.close()
+			arquivo = True
+		except:
+			arquivo = False
+		self.assertEqual(True, arquivo)
+
 
 if __name__ == '__main__':
     unittest.main()
