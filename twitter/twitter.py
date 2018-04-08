@@ -1,6 +1,7 @@
 import os
 import tweepy
 import json
+import twitter_functions
 
 class TwitterUser:
 
@@ -16,9 +17,9 @@ class TwitterUser:
 
 		auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
 		auth.set_access_token(access_token, access_token_secret)
-		api = tweepy.API(auth)
+		self.api = tweepy.API(auth)
 
-		user = api.get_user(username)
+		user = self.api.get_user(username)
 
 		self.id = user.id
 		self.username = user.screen_name
@@ -27,4 +28,11 @@ class TwitterUser:
 		self.tweets_count = user.statuses_count
 		self.following_count = user.friends_count
 		self.likes_count = user.favourites_count
+		
 		file.close()
+
+	def get_last_month_hashtags(self,num_months=1):
+		tweets = twitter_functions.get_user_last_months_tweets(self.username, num_months , self.api)
+		hashtags = twitter_functions.get_hashtags(tweets)
+		return hashtags
+
