@@ -1,28 +1,19 @@
 import unittest
-import os
-import json
-import tweepy
 import datetime
-import twitter.twitter_functions as twitter_functions
+import twitter.twitter_functions as functions
 from dateutil.relativedelta import relativedelta
 
 class TestTwitterFunctions(unittest.TestCase):
 
 	def test_time_range(self):
-		filepath = os.path.join(os.path.dirname(__file__), '../keys.json')
-		file = open(filepath)
-		keys = json.load(file)
-		consumer_key=keys[0]['consumer_key']
-		consumer_secret=keys[0]['consumer_secret']
-		access_token=keys[0]['access_token']
-		access_token_secret=keys[0]['access_token_secret']
-		auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
-		auth.set_access_token(access_token, access_token_secret)
-		api = tweepy.API(auth)
-		tweets = twitter_functions.get_user_last_months_tweets('jairbolsonaro', 2, api)
+		tweets = functions.get_user_last_month_tweets('jairbolsonaro', num_months=2)
 
 		self.assertEqual(tweets[-1].created_at >= datetime.datetime.now() + relativedelta(months=-2), True)
 
+	def test_hashtags(self):
+		api=functions.get_api()
+		tweets=api.statuses_lookup([974344829697249282,974338524773265409])
+		self.assertEqual(functions.get_hashtags(tweets),['boatardealtamentemaisoumenos', 'filosofage'])	
 
 if __name__ == '__main__':
     unittest.main()
