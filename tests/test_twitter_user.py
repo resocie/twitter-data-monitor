@@ -2,8 +2,6 @@ import unittest
 from twitter.twitter import TwitterUser
 
 class TestTwitterUser(unittest.TestCase):
-	def test_isonline(self):
-		user = TwitterUser('alegomes')
 
 	def test_name_retrieval(self):
 		user = TwitterUser('siqueiralex')

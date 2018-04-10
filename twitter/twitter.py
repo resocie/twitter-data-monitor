@@ -1,13 +1,10 @@
-import os
-import tweepy
-import json
-import twitter_functions
+from TwitterToolkit import TwitterAPI
+from TwitterToolkit import TweetTK
 
 class TwitterUser:
 
 	def __init__(self,username):
-		api = twitter_functions.get_api()
-
+		api = TwitterAPI()
 		user = api.get_user(username)
 
 		self.id = user.id
@@ -19,9 +16,9 @@ class TwitterUser:
 		self.likes_count = user.favourites_count
 		
 
-	def get_last_month_hashtags(self,num_months=1):
-		api = twitter_functions.get_api()
-		tweets = twitter_functions.get_user_last_months_tweets(self.username, num_months)
-		hashtags = twitter_functions.get_hashtags(tweets)
+	def last_month_hashtags(self,num_months=1):
+		api = TwitterAPI()
+		tweets = api.get_user_last_month_tweets(self.username, num_months)
+		hashtags = TweetTK.extract_hashtags(tweets)
 		return hashtags
 
