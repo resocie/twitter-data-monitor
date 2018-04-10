@@ -102,6 +102,11 @@ ENV/
 
 # mypy
 .mypy_cache/
+<<<<<<< HEAD
 
 # keys file
+=======
+/keys.json
+*.ipynb
+>>>>>>> 2f1ea7bacf6e7b61f5f0d81386accd3c3af8bc3b
 keys.json
