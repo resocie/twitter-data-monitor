@@ -1,5 +1,4 @@
-from TwitterToolkit import TwitterAPI
-from TwitterToolkit import TweetTK
+from twitter.TwitterToolkit import TwitterAPI, TweetTK
 
 class TwitterUser:
 
@@ -13,12 +12,9 @@ class TwitterUser:
 		self.followers_count = user.followers_count
 		self.tweets_count = user.statuses_count
 		self.following_count = user.friends_count
-		self.likes_count = user.favourites_count
-		
 
 	def last_month_hashtags(self,num_months=1):
 		api = TwitterAPI()
 		tweets = api.get_user_last_month_tweets(self.username, num_months)
 		hashtags = TweetTK.extract_hashtags(tweets)
 		return hashtags
-
