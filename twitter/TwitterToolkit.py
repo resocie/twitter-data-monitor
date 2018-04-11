@@ -35,7 +35,7 @@ class TwitterAPI(tweepy.API):
 
         return tweet_list
 
-    def criar_csv():
+    def criar_csv_basico():
         with open('twitter/autores.csv', 'w') as csvfile:
             writer_t = csv.writer(csvfile, delimiter=';')
             writer_t.writerow(["nome", "seguidores", "tweets", "seguindo", "curtidas"])
