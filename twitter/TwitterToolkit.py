@@ -1,3 +1,4 @@
+import csv
 import datetime
 import os
 import json
@@ -16,10 +17,10 @@ class TwitterAPI(tweepy.API):
         access_token_secret=keys[0]['access_token_secret']
         auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
         auth.set_access_token(access_token, access_token_secret)
-        
+
         tweepy.API.__init__(self,auth)
-        file.close()        
- 
+        file.close()
+
 
     def get_user_last_month_tweets(self,username, num_months=1):
         tweet_list = []
@@ -34,6 +35,18 @@ class TwitterAPI(tweepy.API):
 
         return tweet_list
 
+    def criar_csv():
+        with open('twitter/autores.csv', 'w') as csvfile:
+            writer_t = csv.writer(csvfile, delimiter=';')
+            writer_t.writerow(["nome", "seguidores", "tweets", "seguindo", "curtidas"])
+            csvfile.close()
+
+    def atualizar_csv_novos_autores(self):
+        with open('twitter/autores.csv', 'a') as csvfile:
+            writer_t = csv.writer(csvfile, delimiter=';')
+            writer_t.writerow([self.name, self.followers_count,
+            self.tweets_count, self.following_count, self.likes_count])
+            csvfile.close()
 
 
 class TweetTK:
@@ -41,10 +54,7 @@ class TweetTK:
     @staticmethod
     def extract_hashtags(tweet_list):
         hashtags = []
-        for tweet in tweet_list:    
+        for tweet in tweet_list:
             for hashtag in tweet.entities['hashtags']:
                 hashtags.append(hashtag['text'])
         return list(set(hashtags))
-
-
-
