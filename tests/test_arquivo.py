@@ -14,7 +14,7 @@ class TestArquivoCSV(unittest.TestCase):
 
 	def test_criar_csv(self):
 		teste = Tapi.criar_csv_basico()
-		self.assertEqual(", teste)
+		self.assertEqual("", teste)
 
 		for user in ['Renova_BR', 'bancadaativista', 'agora_movimento']:
 			user = TwitterUser(user)
