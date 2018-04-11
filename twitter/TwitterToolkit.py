@@ -35,13 +35,13 @@ class TwitterAPI(tweepy.API):
 
         return tweet_list
 
-    def criar_csv_basico():
+    def create_csv_basic():
         with open('twitter/autores.csv', 'w') as csvfile:
             writer_t = csv.writer(csvfile, delimiter=';')
             writer_t.writerow(["nome", "seguidores", "tweets", "seguindo", "curtidas"])
             csvfile.close()
 
-    def atualizar_csv_novos_autores(self):
+    def update_csv_new_autors(self):
         with open('twitter/autores.csv', 'a') as csvfile:
             writer_t = csv.writer(csvfile, delimiter=';')
             writer_t.writerow([self.name, self.followers_count,
