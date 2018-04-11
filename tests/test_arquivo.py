@@ -2,7 +2,7 @@ import unittest
 from twitter.twitter import TwitterUser
 from twitter.TwitterToolkit import TwitterAPI as Tapi
 
-class TestFileoCSV(unittest.TestCase):
+class TestFileCSV(unittest.TestCase):
 	def test_file_exist(self):
 		try:
 			file = open('twitter/autores.csv',newline='')
