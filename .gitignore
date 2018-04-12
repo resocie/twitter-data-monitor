@@ -105,4 +105,3 @@ ENV/
 /keys.json
 *.ipynb
 keys.json
-*.csv
