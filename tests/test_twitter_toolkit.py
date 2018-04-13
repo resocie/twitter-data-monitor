@@ -1,7 +1,6 @@
 import unittest
 import datetime
-from twitter.TwitterToolkit import TwitterAPI
-from twitter.TwitterToolkit import TweetTK
+from twitter.TwitterToolkit import TwitterAPI, TweetTK
 from dateutil.relativedelta import relativedelta
 
 class TestTwitterToolkit(unittest.TestCase):
@@ -15,7 +14,7 @@ class TestTwitterToolkit(unittest.TestCase):
 	def test_hashtags(self):
 		api = TwitterAPI()
 		tweets = api.statuses_lookup([974344829697249282,974338524773265409])
-		self.assertEqual(TweetTK.extract_hashtags(tweets),['BoaTardeAltamenteMaisOuMenos', 'Filosofage'])		
+		self.assertEqual(TweetTK.extract_hashtags(tweets),['BoaTardeAltamenteMaisOuMenos', 'Filosofage'])
 
 if __name__ == '__main__':
     unittest.main()
