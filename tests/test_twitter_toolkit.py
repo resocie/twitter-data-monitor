@@ -5,6 +5,7 @@ from dateutil.relativedelta import relativedelta
 
 class TestTwitterToolkit(unittest.TestCase):
 
+	# time consuming
 	def test_time_range(self):
 		api = TwitterAPI()
 		tweets = api.get_user_last_month_tweets('jairbolsonaro', num_months=2)

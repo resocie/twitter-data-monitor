@@ -1,4 +1,4 @@
-from twitter.TwitterToolkit import TwitterAPI, TweetTK
+from TwitterToolkit import TwitterAPI, TweetTK
 
 class TwitterUser:
 
@@ -17,7 +17,6 @@ class TwitterUser:
 				self.likes_count = user.favourites_count
 			except Exception as e:
 				self.existence = False
-				print("conta "+ username + " nao existe")
 		else:
 			self.existence = False
 	def last_month_hashtags(self,num_months=1):
