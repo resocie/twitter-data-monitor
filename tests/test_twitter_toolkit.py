@@ -14,7 +14,7 @@ class TestTwitterToolkit(unittest.TestCase):
 	def test_hashtags(self):
 		api = TwitterAPI()
 		tweets = api.statuses_lookup([974344829697249282,974338524773265409])
-		self.assertEqual(TweetTK.extract_hashtags(tweets),['BoaTardeAltamenteMaisOuMenos', 'Filosofage'])
-
+		self.assertIn("Filosofage",TweetTK.extract_hashtags(tweets))
+		self.assertIn("BoaTardeAltamenteMaisOuMenos",TweetTK.extract_hashtags(tweets))
 if __name__ == '__main__':
     unittest.main()
