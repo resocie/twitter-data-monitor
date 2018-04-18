@@ -23,6 +23,12 @@ class TestFileCSV(unittest.TestCase):
             first_row = ["nome","seguidores","tweets","seguindo","curtidas","hashtags"]
             self.assertEqual(first_row,row1)
             csvfile.close()
+            
+    def test_word_separator(self):
+        vector = ['SolidariedadeInternacional', 'DemocratizeJá', 'LulapeloBrasil','DemarcaçãoJá','OcupaCuritiba']
+        string = '#SolidariedadeInternacional #DemocratizeJá #LulapeloBrasil #DemarcaçãoJá #OcupaCuritiba '
+        hashtags = CsvBuilder.word_separator(vector)
+        self.assertEqual(string,hashtags)
 
 if __name__ == '__main__':
     unittest.main()
