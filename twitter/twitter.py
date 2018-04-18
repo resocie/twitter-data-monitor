@@ -1,4 +1,4 @@
-from TwitterToolkit import TwitterAPI, TweetTK
+from twitter.TwitterToolkit import TwitterAPI, TweetTK
 
 class TwitterUser:
 

@@ -1,6 +1,6 @@
 import csv
 import os
-from twitter import TwitterUser
+from twitter.twitter import TwitterUser
 
 class CsvBuilder:
 
