@@ -26,9 +26,14 @@ class TwitterAPI(tweepy.API):
         tweet_list = []
         min_date = datetime.datetime.now() + relativedelta(months=-num_months)
         temp = self.user_timeline(screen_name=username, count=200, tweet_mode='extended')
-        while temp[-1].created_at >= min_date and len(temp)>0:
+        while True:
+            if not len(temp) > 0:
+                break
+            if not temp[-1].created_at >= min_date:
+                break    
             tweet_list.extend(temp)
-            temp = self.user_timeline(screen_name=username, max_id=(temp[-1].id -1), count=200, tweet_mode='extended')
+            temp = self.user_timeline(screen_name=username, max_id=(temp[-1].id -1), count=200, tweet_mode='extended')    
+
         for tweet in temp:
             if tweet.created_at >= min_date:
                 tweet_list.append(tweet)
@@ -39,9 +44,15 @@ class TwitterAPI(tweepy.API):
         tweet_list = []
         min_date = datetime.datetime(year, month, day)
         temp = self.user_timeline(screen_name=username, count=200, tweet_mode='extended')
-        while temp[-1].created_at >= min_date and len(temp)>0:
+        while True:
+            if not len(temp) > 0:
+                break
+            if not temp[-1].created_at >= min_date:
+                break   
             tweet_list.extend(temp)
-            temp = self.user_timeline(screen_name=username, max_id=(temp[-1].id -1), count=200, tweet_mode='extended')
+            temp = self.user_timeline(screen_name=username, max_id=(temp[-1].id -1), count=200, tweet_mode='extended')    
+
+
         for tweet in temp:
             if tweet.created_at >= min_date:
                 tweet_list.append(tweet)
