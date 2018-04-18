@@ -35,6 +35,18 @@ class TwitterAPI(tweepy.API):
 
         return tweet_list
 
+    def get_user_tweets_from(self,username, day, month, year):
+        tweet_list = []
+        min_date = datetime.datetime(year, month, day)
+        temp = self.user_timeline(screen_name=username, count=200, tweet_mode='extended')
+        while temp[-1].created_at >= min_date and len(temp)>0:
+            tweet_list.extend(temp)
+            temp = self.user_timeline(screen_name=username, max_id=(temp[-1].id -1), count=200, tweet_mode='extended')
+        for tweet in temp:
+            if tweet.created_at >= min_date:
+                tweet_list.append(tweet)
+
+        return tweet_list    
 
 class TweetTK:
 

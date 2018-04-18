@@ -1,4 +1,5 @@
 import unittest
+import warnings
 from twitter.twitter import TwitterUser
 
 class TestTwitterUser(unittest.TestCase):
@@ -23,3 +24,4 @@ class TestTwitterUser(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main()
+    
