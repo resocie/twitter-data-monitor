@@ -1,8 +1,8 @@
 import json
-from twitter.twitter_api import TwitterAPI
-from twitter.twitter_user import TwitterUser
-from csv.csv_builder import CsvBuilder
-
+import modules
+from modules.twitter_api import TwitterAPI
+from modules.twitter_user import TwitterUser
+from modules.csv_builder import CsvBuilder
 
 if __name__ == '__main__':
     file = open("helpers/politicians.json")
