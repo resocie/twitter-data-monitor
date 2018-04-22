@@ -7,7 +7,7 @@ from dateutil.relativedelta import relativedelta
 
 class TwitterAPI(tweepy.API):
 
-    def __init__(self,keys="../keys.json"):
+    def __init__(self,keys="../helpers/keys.json"):
         filepath = os.path.join(os.path.dirname(__file__), keys)
         file = open(filepath)
         keys = json.load(file)
@@ -21,25 +21,6 @@ class TwitterAPI(tweepy.API):
         tweepy.API.__init__(self,auth)
         file.close()
 
-
-    def get_user_last_month_tweets(self,username, num_months=1):
-        tweet_list = []
-        min_date = datetime.datetime.now() + relativedelta(months=-num_months)
-        temp = self.user_timeline(screen_name=username, count=200, tweet_mode='extended')
-        while True:
-            if not len(temp) > 0:
-                break
-            if not temp[-1].created_at >= min_date:
-                break    
-            tweet_list.extend(temp)
-            temp = self.user_timeline(screen_name=username, max_id=(temp[-1].id -1), count=200, tweet_mode='extended')    
-
-        for tweet in temp:
-            if tweet.created_at >= min_date:
-                tweet_list.append(tweet)
-
-        return tweet_list
-
     def get_user_tweets_from(self,username, day, month, year):
         tweet_list = []
         min_date = datetime.datetime(year, month, day)
@@ -48,18 +29,16 @@ class TwitterAPI(tweepy.API):
             if not len(temp) > 0:
                 break
             if not temp[-1].created_at >= min_date:
-                break   
+                break
             tweet_list.extend(temp)
-            temp = self.user_timeline(screen_name=username, max_id=(temp[-1].id -1), count=200, tweet_mode='extended')    
+            temp = self.user_timeline(screen_name=username, max_id=(temp[-1].id -1), count=200, tweet_mode='extended')
 
 
         for tweet in temp:
             if tweet.created_at >= min_date:
                 tweet_list.append(tweet)
 
-        return tweet_list    
-
-class TweetTK:
+        return tweet_list
 
     @staticmethod
     def extract_hashtags(tweet_list):

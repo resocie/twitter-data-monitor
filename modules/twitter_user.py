@@ -1,4 +1,4 @@
-from twitter.TwitterToolkit import TwitterAPI, TweetTK
+from .twitter_api import TwitterAPI
 
 class TwitterUser:
 
@@ -19,16 +19,9 @@ class TwitterUser:
 				self.existence = False
 		else:
 			self.existence = False
-			
-	def last_month_hashtags(self,num_months=1):
-		api = TwitterAPI()
-		tweets = api.get_user_last_month_tweets(self.username, num_months)
-		hashtags = TweetTK.extract_hashtags(tweets)
-		return hashtags
 
 	def hashtags_from(self, day, month, year):
 		api = TwitterAPI()
 		tweets = api.get_user_tweets_from(self.username, day, month, year)
-		hashtags = TweetTK.extract_hashtags(tweets)
-		return hashtags	
-	
+		hashtags = TwitterAPI.extract_hashtags(tweets)
+		return hashtags

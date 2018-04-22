@@ -1,7 +1,7 @@
 import json
-from twitter.TwitterToolkit import TwitterAPI, TweetTK
-from twitter.twitter import TwitterUser
-from twitter.CsvFile import CsvBuilder
+from twitter.twitter_api import TwitterAPI
+from twitter.twitter_user import TwitterUser
+from csv.csv_builder import CsvBuilder
 
 
 if __name__ == '__main__':
