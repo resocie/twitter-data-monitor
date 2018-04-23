@@ -2,13 +2,13 @@
 
 Este repositório compõe projeto de pesquisa com foco empírico nas eleições brasileiras de 2018 do grupo de pesquisa [Resocie](http://resocie.org) do [Instituto de Ciência Política - IPOL](http://ipol.unb.br/) com o apoio técnico do [Departamento de Computação - CIC](http://www.cic.unb.br/) da [Universidade de Brasília - UnB](http://unb.br).
 
-O projeto consiste na coleta sistemática de informações quantitativas da plataforma Twitter com o objetivo de subsidiar a análise do comportamento político de alguns atores da cena eleitoral durante o período de campanha. Além de seu objetivo finalístico para a coleta de dados, o projeto tem também por intuito servir de material de estudo dos alunos da disciplina Engenharia de Software do Departamento de Ciência da Computação da UnB no 1º semestre de 2018. 
+O projeto consiste na coleta sistemática de informações quantitativas da plataforma Twitter com o objetivo de subsidiar a análise do comportamento político de alguns atores da cena eleitoral durante o período de campanha. Além de seu objetivo finalístico para a coleta de dados, o projeto tem também por intuito servir de material de estudo dos alunos da disciplina Engenharia de Software do Departamento de Ciência da Computação da UnB no 1º semestre de 2018.
 
 As instruções a seguir trazem orientações para aqueles que quiserem contribuir com a iniciativa.
 
 ## Preparar ambiente
 
-Um bom processo de trabalho em desenvolvimento de software começa com a preparação de um ambiente adequado de programação. 
+Um bom processo de trabalho em desenvolvimento de software começa com a preparação de um ambiente adequado de programação.
 
 ### Instalar pacotes básicos
 
@@ -57,7 +57,7 @@ Sugiro darem uma olhada [nesta ótima introdução ao unittest](http://pythontes
 
 ## ToDo
 
-Este é apenas um esqueleto de projeto para que o grupo comece a trabalhar. Resta ainda muito trabalho a ser feito. Algumas ideias: 
+Este é apenas um esqueleto de projeto para que o grupo comece a trabalhar. Resta ainda muito trabalho a ser feito. Algumas ideias:
 
 * Corrigir testes quebrados
 * Complementar testes
