@@ -4,6 +4,10 @@ import datetime
 import modules
 from modules.twitter_api import TwitterAPI
 from dateutil.relativedelta import relativedelta
+try:
+	import modules.__os_setup__
+except ImportError:
+	pass
 
 class TestTwitterAPI(unittest.TestCase):
 

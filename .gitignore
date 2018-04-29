@@ -105,3 +105,4 @@ ENV/
 /keys.json
 *.ipynb
 keys.json
+/modules/__os_setup__

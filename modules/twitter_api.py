@@ -7,19 +7,25 @@ from dateutil.relativedelta import relativedelta
 
 class TwitterAPI(tweepy.API):
 
-    def __init__(self,keys="../helpers/keys.json"):
-        filepath = os.path.join(os.path.dirname(__file__), keys)
-        file = open(filepath)
-        keys = json.load(file)
-        consumer_key=keys[0]['consumer_key']
-        consumer_secret=keys[0]['consumer_secret']
-        access_token=keys[0]['access_token']
-        access_token_secret=keys[0]['access_token_secret']
+    def __init__(self):
+
+        try:
+            import __os_setup__
+        except ImportError:
+            pass
+
+        consumer_key = os.environ.get('TWITTER_CONSUMER_KEY')
+        # print(consumer_key)
+        consumer_secret = os.environ.get('TWITTER_CONSUMER_SECRET')
+        # print(consumer_secret)
+        access_token = os.environ.get('TWITTER_ACCESS_TOKEN')
+        # print(access_token)
+        access_token_secret = os.environ.get('TWITTER_ACCESS_TOKEN_SECRET')
+        # print(access_token_secret)
         auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
         auth.set_access_token(access_token, access_token_secret)
 
         tweepy.API.__init__(self,auth)
-        file.close()
 
     def get_user_tweets_from(self,username, day, month, year):
         tweet_list = []
