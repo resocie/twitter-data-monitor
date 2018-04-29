@@ -1,6 +1,0 @@
-import os
-
-os.environ["TWITTER_CONSUMER_KEY"] = "oMglJW9PEAwES6Gk4tZclDEEH"
-os.environ["TWITTER_CONSUMER_SECRET"] = "6qKGJuRbTrWzDRf5bmbBmtwNW92ziXBj6lx6Il3jbvhtfVecmR"
-os.environ["TWITTER_ACCESS_TOKEN"] = "52126452-OlDrTWoLcKUcctOjyJ32bGwIqd8vp48c58s94PgDe"
-os.environ["TWITTER_ACCESS_TOKEN_SECRET"] = "iIXWJVGrmEkUNwzFcqlyCbbMsaLpnOJWQdO5ilHVL6QDm"
