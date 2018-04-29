@@ -4,13 +4,8 @@ import datetime
 import modules
 from modules.twitter_api import TwitterAPI
 from dateutil.relativedelta import relativedelta
-try:
-	import modules.__os_setup__
-except ImportError:
-	pass
 
 class TestTwitterAPI(unittest.TestCase):
-
 	# time consuming
 	def test_time_range(self):
 		warnings.filterwarnings("ignore", category=ResourceWarning)

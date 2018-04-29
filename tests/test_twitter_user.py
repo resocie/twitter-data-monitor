@@ -2,10 +2,6 @@ import unittest
 import warnings
 from modules.twitter_user import TwitterUser
 from modules.twitter_api import TwitterAPI
-try:
-	import modules.__os_setup__
-except ImportError:
-	pass
 
 class TestTwitterUser(unittest.TestCase):
 

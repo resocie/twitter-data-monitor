@@ -6,22 +6,12 @@ import tweepy
 from dateutil.relativedelta import relativedelta
 
 class TwitterAPI(tweepy.API):
-
     def __init__(self):
-
-        try:
-            import __os_setup__
-        except ImportError:
-            pass
-
         consumer_key = os.environ.get('TWITTER_CONSUMER_KEY')
-        # print(consumer_key)
         consumer_secret = os.environ.get('TWITTER_CONSUMER_SECRET')
-        # print(consumer_secret)
         access_token = os.environ.get('TWITTER_ACCESS_TOKEN')
-        # print(access_token)
         access_token_secret = os.environ.get('TWITTER_ACCESS_TOKEN_SECRET')
-        # print(access_token_secret)
+
         auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
         auth.set_access_token(access_token, access_token_secret)
 
