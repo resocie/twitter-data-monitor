@@ -39,10 +39,6 @@ class TwitterAPI(tweepy.API):
         return tweet_list
 
 
-
-
-
-
     @staticmethod
     def extract_hashtags(tweet_list):
         '''
