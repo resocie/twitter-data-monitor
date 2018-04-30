@@ -102,3 +102,7 @@ ENV/
 
 # mypy
 .mypy_cache/
+helpers/keys.json
+/keys.json
+*.ipynb
+keys.json
