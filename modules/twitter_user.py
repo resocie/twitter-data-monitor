@@ -18,7 +18,7 @@ class TwitterUser:
 				self.hashtags = []
 				self.mentions = []
 				self.retweets_count = 0
-				self.favourites_count = 0 
+				self.favorites_count = 0 
 			except Exception as e:
 				self.existence = False
 		else:
