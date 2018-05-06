@@ -3,25 +3,18 @@ import warnings
 from modules.twitter_user import TwitterUser
 from modules.twitter_api import TwitterAPI
 
-class TestTwitterUser(unittest.TestCase):
+class TestTwitterUser():
 
-        def test_name_retrieval():
-                user = TwitterUser('siqueiralex')
-                assert user.name == 'Alex Siqueira'
+    def test_name_retrieval(self):
+        user = TwitterUser('siqueiralex')
+        assert 'Alex Siqueira' == user.name
+        assert  52126452 == user.id
 
-	def test_id_retrieval():
-		user = TwitterUser('alegomes')
-		assert user.id == 14147108
-
-	def test_account_existance():
-		user = TwitterUser('')
-		assert user.existence == False
+    def test_account_existance(self):
+        user = TwitterUser('')
+        assert user.existence == False
 
 	# time consuming
-	def test_false_account():
-		user = TwitterUser('mrinasilv')
-		assert user.existence == False
-
-
-if __name__ == '__main__':
-    unittest.main()
+    def test_false_account(self):
+        user = TwitterUser('mrinasilv')
+        assert user.existence == False
